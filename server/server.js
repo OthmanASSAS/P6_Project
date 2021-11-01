@@ -1,11 +1,16 @@
 const express = require("express");
-require('dotenv').config()
+require("dotenv").config();
+const connectDB = require("./config/db");
+
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello Express! 🎉')
-}) 
+// Connect DataBase
+connectDB();
 
-const {PORT} = process.env || 3030
+app.get("/", (req, res) => {
+  res.send("Hello Express!! 🎉");
+});
 
-app.listen(PORT, ()=> console.log(`Server started on port ${PORT}`));
+const { PORT } = process.env || 3000;
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
