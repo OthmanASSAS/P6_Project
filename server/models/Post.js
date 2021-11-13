@@ -31,7 +31,7 @@ const PostSchema = new Schema({
         ref: "users",
       },
       text: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: "users",
       },
       date: {
